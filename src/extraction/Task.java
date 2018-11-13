@@ -50,7 +50,7 @@ public class Task {
 		return this.name;
 	}
 	
-	public double getDefaultMH(int i){
+	public double getMinimumWorkAmount(int i){
 		if(minimumWorkAmount.size()<i){
 			for(int j=i; j>0; j--){
 				if(minimumWorkAmount.size()>=j){
@@ -77,7 +77,7 @@ public class Task {
 		return this.FSTaskList;
 	}
 	
-	public Map<Integer, Double> getDefaultMHMap(){
+	public Map<Integer, Double> getMinimumWorkAmountMap(){
 		return this.minimumWorkAmount;
 	}
 	
@@ -101,12 +101,12 @@ public class Task {
 		this.name=n;
 	}
 	
-	public void setDefaultMHMap(Map<Integer,Double> m){
+	public void setMinimumWorkAmountMap(Map<Integer,Double> m){
 		this.minimumWorkAmount=m;
 	}
 	
-	public void addDefaultMH(int i, double mh){
-		this.minimumWorkAmount.put(i, mh);
+	public void addMinimumWorkAmount(int i, double wm){
+		this.minimumWorkAmount.put(i, wm);
 	}
 	
 	public boolean ifDependentTask(String task){

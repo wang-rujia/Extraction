@@ -49,7 +49,7 @@ public class Data {
 		return this.task;
 	}
 	
-	public double getMH(){
+	public double getWorkAmount(){
 		double d = (this.et-this.st+1) * this.resourceCapacity;
 		return d;
 	}

@@ -77,40 +77,33 @@ public class Extract {
 		}
 		keepConsistency();
 	}
-		
-	/*<<<<<PRINT FOR TEST>>>>>
-		for(Task t: this.taskList) System.out.println(t.getName()+", "+t.getDefaultMH(1));
-		for(Data d: this.dataList) System.out.println(d.getId()+"  "+d.getTaskName()+" ST: "+d.getST()+" ET: "+d.getET()+" MH: "+d.getMH());
-		for(Resource r: this.resourceList) System.out.println(r.getName());
-		System.out.println();
-	*/
 
 //2 EXTRACT UNCERTAINTY
 	public void extractUncertainty(){
 	//2.1 DEFUALT MAN-HOUR
-		for(int i=1;i<100;i++) calMinMHInEachOccurrence(i);
+		for(int i=1;i<100;i++) calMWAInEachOccurrence(i);
 	//2.2 DELAY
 		for(Task t: this.taskList){
-			//storage map<occurrence number, list of ceil(delay mh)>
-			Map<Integer,List<Integer>> additionalMH = new HashMap<Integer,List<Integer>>();
+			//storage map<occurrence number, list of ceil(additional work amount)>
+			Map<Integer,List<Integer>> additionalWorkAmountMap = new HashMap<Integer,List<Integer>>();
 			for(Data d: this.dataList){
 				if(d.getTaskName().equals(t.getName())){
-					int delayMH = (int)Math.ceil(d.getMH()-t.getDefaultMH(d.getOccurrenceNumberInProject()));
-					if(delayMH<0) delayMH=0;
-					if(additionalMH.containsKey(d.getOccurrenceNumberInProject())){
-						additionalMH.get(d.getOccurrenceNumberInProject()).add(delayMH);
+					int additionalWorkAmount = (int)Math.ceil(d.getWorkAmount()-t.getMinimumWorkAmount(d.getOccurrenceNumberInProject()));
+					if(additionalWorkAmount<0) additionalWorkAmount=0;
+					if(additionalWorkAmountMap.containsKey(d.getOccurrenceNumberInProject())){
+						additionalWorkAmountMap.get(d.getOccurrenceNumberInProject()).add(additionalWorkAmount);
 					}else{
 						List<Integer> tmp = new ArrayList<Integer>();
-						tmp.addAll(Arrays.asList(delayMH));
-						additionalMH.put(d.getOccurrenceNumberInProject(),tmp);
+						tmp.addAll(Arrays.asList(additionalWorkAmount));
+						additionalWorkAmountMap.put(d.getOccurrenceNumberInProject(),tmp);
 					}
 				}
 			}
 			//calculation
 			int i=1; //occurrence number
 			Delay delay = new Delay();
-			while(additionalMH.containsKey(i)){
-				List<Integer> delayList = additionalMH.get(i);//list of delay mh in occurrence time i
+			while(additionalWorkAmountMap.containsKey(i)){
+				List<Integer> delayList = additionalWorkAmountMap.get(i);//list of additional work amount in occurrence time i
 				Collections.sort(delayList);
 				double label = 1;
 				double tmp = delayList.get(delayList.size()-1)+1;
@@ -127,8 +120,8 @@ public class Extract {
 		System.out.println("Defualt");
 		for(Task t: this.taskList){
 			System.out.println(t.getName());
-			for(int i : t.getDefaultMHMap().keySet()){
-				System.out.println("   "+i+"  "+t.getDefaultMH(i));
+			for(int i : t.getMinimumWorkAmountMap().keySet()){
+				System.out.println("   "+i+"  "+t.getMinimumWorkAmount(i));
 			}
 		}
 		System.out.println("Delay");
@@ -140,7 +133,7 @@ public class Extract {
 		
 	//2.3 REWORK
 		for(Data d: this.dataList) {
-			int pwe10 = (int)Math.floor(d.getMH()/this.getTaskByName(d.getTaskName()).getDefaultMH(d.getOccurrenceNumberInProject())*10);
+			int pwe10 = (int)Math.floor(d.getWorkAmount()/this.getTaskByName(d.getTaskName()).getMinimumWorkAmount(d.getOccurrenceNumberInProject())*10);
 			d.setProgressWhenEnd10(pwe10);
 		}
 		for(Task t : this.taskList){
@@ -224,18 +217,18 @@ public class Extract {
 		this.taskList=duplicateList;
 	}
 	
-	private void calMinMHInEachOccurrence(int i){
+	private void calMWAInEachOccurrence(int i){
 		boolean[] ifInit = new boolean[taskList.size()];
 		Arrays.fill(ifInit, false);
-		double mh=0.0;
+		double wa=0.0;
 		for(Data d: this.dataList){
 			Task t = this.getTaskByName(d.getTaskName());
-			mh = d.getMH();
+			wa = d.getWorkAmount();
 			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && !this.getTaskByName(d.getTaskName()).ifDependentTask(d.getNextTask())){
-				t.addDefaultMH(i,mh);
+				t.addMinimumWorkAmount(i,wa);
 				ifInit[taskList.indexOf(t)]=true;
 			}else if(d.getOccurrenceNumberInProject()==i && !this.getTaskByName(d.getTaskName()).ifDependentTask(d.getNextTask())){
-				if(t.getDefaultMH(i) > mh) t.addDefaultMH(i,mh);	
+				if(t.getMinimumWorkAmount(i) > wa) t.addMinimumWorkAmount(i,wa);	
 			}
 		}
 	}
