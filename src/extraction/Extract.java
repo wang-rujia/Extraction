@@ -63,7 +63,7 @@ public class Extract {
 		for(Project p: projectList){
 			p.setTaskList(this.taskList);
 			p.countOccurrenceNumber();
-			/*
+			
 			boolean ifSeperated;
 			while(true){
 				p.countOccurrenceNumber();
@@ -72,7 +72,7 @@ public class Extract {
 					break;
 				}
 			}
-			*/
+			
 			p.recordNextTask();
 		}
 		keepConsistency();

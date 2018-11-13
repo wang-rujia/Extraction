@@ -52,9 +52,7 @@ public class Project {
 			Task t1 = this.getTaskByName(d1.getTaskName());
 			for(Data d2: dataList){	
 				Task t2 = this.getTaskByName(d2.getTaskName());
-				if(t1.ifFSTask(t2) && 
-						d2.getST()<d1.getET() && 
-						d1.getOccurrenceNumberInProject()<d2.getOccurrenceNumberInProject()){
+				if(t1.ifFSTask(t2) && d1.getST()<d2.getET() && d1.getOccurrenceNumberInProject()<d2.getOccurrenceNumberInProject()){
 					if(d2.getST()>d1.getST() && d2.getET()<d1.getET()){
 						this.addData(UUID.randomUUID().toString(),this.getName(),d1.getTaskName(),
 								String.valueOf(d2.getET()+1),String.valueOf(d1.getET()),
@@ -62,10 +60,12 @@ public class Project {
 								d1.getDependentTask(),d1.getDependencyType(), d1.getOccurrenceNumberInProject()+1);
 						d1.setET(d2.getST()-1);
 						return true;
-					}else if(d2.getST()<d1.getST()){
+					}
+					if(d2.getST()<d1.getST() && d2.getET()<d1.getET() && d2.getET()>d1.getST()){
 						d1.setST(d2.getET()+1);
 						return true;
-					}else if(d2.getET()>d1.getET()){
+					}
+					if(d2.getET()>d1.getET() && d2.getET()>d1.getET() && d2.getST()<d1.getET()){
 						d1.setET(d2.getST()-1);
 						return true;
 					}
