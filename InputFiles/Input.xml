@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<NodeElementList>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>A</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>B</Name>
+        <FSTask name="A"></FSTask>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>C</Name>
+        <FSTask name="A"></FSTask>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>D</Name>
+        <FSTask name="B"></FSTask>
+        <FSTask name="C"></FSTask>
+    </TaskNode>
+        
+    <ResourceNode>
+        <Name>ra</Name>
+        <Skill name="A" value="1"></Skill>
+        <Skill name="B" value="1"></Skill>
+        <Skill name="C" value="1"></Skill>
+        <Skill name="D" value="1"></Skill>
+    </ResourceNode>
+    
+    <Dependency>
+        <TaskDependency subject="B" type="FS" name="A"></TaskDependency>
+        <TaskDependency subject="C" type="FS" name="A"></TaskDependency>
+        <TaskDependency subject="D" type="FS" name="B"></TaskDependency>
+        <TaskDependency subject="D" type="FS" name="C"></TaskDependency>
+    </Dependency>
+</NodeElementList>

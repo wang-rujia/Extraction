@@ -99,19 +99,20 @@ public class Project {
 	}
 	
 	public void recordNextTask(){
-		//sort data by start time
 		dataList.sort((d1,d2) -> {
 			int st1 = d1.getST();
 			int st2 = d2.getST();
 			return Integer.compare(st1, st2);
 		});
-		//record next task
-		for(Data d : dataList){
-			if(dataList.indexOf(d)<dataList.size()-1) {
-				d.setNextTask(dataList.get(dataList.indexOf(d)+1).getTaskName());
+		for(int i=0;i<dataList.size()-1;i++){
+			for(int j=i+1;j<dataList.size();j++){
+				if(dataList.get(i).getET()<dataList.get(j).getST()){
+					dataList.get(i).setNextTask(dataList.get(j).getTaskName());
+					System.out.println(dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
+					break;
+				}
 			}
 		}
-		
 	}
 	
 	

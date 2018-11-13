@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<NodeElementList>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>A</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>B</Name>
+        <FSTask name="A"></FSTask>
+    </TaskNode>
+        
+    <ResourceNode>
+        <Name>ra</Name>
+        <Skill name="A" value="1"></Skill>
+    </ResourceNode>
+    <ResourceNode>
+        <Name>rb</Name>
+        <Skill name="B" value="1"></Skill>
+    </ResourceNode>
+    
+    <Dependency>
+        <TaskDependency subject="B" type="FS" name="A"></TaskDependency>
+    </Dependency>
+</NodeElementList>
