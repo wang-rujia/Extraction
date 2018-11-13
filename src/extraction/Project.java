@@ -65,8 +65,12 @@ public class Project {
 						d1.setST(d2.getET()+1);
 						return true;
 					}
-					if(d2.getET()>d1.getET() && d2.getET()>d1.getET() && d2.getST()<d1.getET()){
+					if(d2.getET()>d1.getET() && d2.getST()>d1.getST() && d2.getST()<d1.getET()){
 						d1.setET(d2.getST()-1);
+						return true;
+					}
+					if(d2.getST()<d1.getST() && d2.getET()>d1.getET()){
+						dataList.remove(d1);
 						return true;
 					}
 				}
