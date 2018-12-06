@@ -80,7 +80,7 @@ public class Extract {
 
 //2 EXTRACT UNCERTAINTY
 	public void extractUncertainty(){
-	//2.1 DEFUALT MAN-HOUR
+	//2.1 MINIMAL MAN-HOUR
 		for(int i=1;i<100;i++) calMWAInEachOccurrence(i);
 	//2.2 DELAY
 		for(Task t: this.taskList){

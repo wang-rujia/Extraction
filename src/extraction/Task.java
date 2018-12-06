@@ -110,11 +110,18 @@ public class Task {
 	}
 	
 	public boolean ifDependentTask(String task){
+		if(this.getName().equals("C") && task.equals("A1")){
+			System.out.println("checking");
+		}
 		for(Task t: this.FSTaskList){
 			if(t.getName().equals(task)){
 				return true;
 			}else{
-				return t.ifDependentTask(task);
+				if(t.ifDependentTask(task)==false){
+					continue;
+				}else{
+					return true;
+				}
 			}
 		}
 		return false;
