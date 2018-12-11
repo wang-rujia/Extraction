@@ -15,7 +15,7 @@ public class Data {
 	
 	//extracted information
 	private int occurrenceNumberInProject;
-	private String nextTask;
+	private String reworkTask;
 	private int progressWhenEnd10;
 	
 	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt, String dtype){
@@ -29,7 +29,7 @@ public class Data {
 		this.dependentTask=dt;
 		this.dependencyType=dtype;
 		this.occurrenceNumberInProject=0;
-		this.nextTask="none";
+		this.reworkTask="none";
 		this.progressWhenEnd10=0;
 	}
 	
@@ -82,8 +82,8 @@ public class Data {
 		return this.progressWhenEnd10;
 	}
 	
-	public String getNextTask(){
-		return this.nextTask;
+	public String getReworkTask(){
+		return this.reworkTask;
 	}
 	
 	public void setOccurrenceNumberInProject(int o){
@@ -102,8 +102,8 @@ public class Data {
 		this.progressWhenEnd10=d;
 	}
 	
-	public void setNextTask(String t){
-		this.nextTask=t;
+	public void setReworkTask(String t){
+		this.reworkTask=t;
 	}
 	
 }

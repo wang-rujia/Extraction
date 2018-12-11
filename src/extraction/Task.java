@@ -26,8 +26,6 @@ public class Task {
 		this.minimumWorkAmount = new HashMap<Integer,Double>();
 	}
 	
-
-	
 	public void addDependency(String dtype, Task t){
 		if(dtype.equals("FS")) this.FSTaskList.add(t);
 	}
@@ -53,12 +51,12 @@ public class Task {
 	public double getMinimumWorkAmount(int i){
 		if(minimumWorkAmount.size()<i){
 			for(int j=i; j>0; j--){
-				if(minimumWorkAmount.size()>=j){
-					System.out.println("cannot find correct minimum work amount, using mwa("+j+")");
+				if(minimumWorkAmount.size()>j){
+					System.out.println(this.getName()+",cannot find correct minimum work amount, using mwa("+j+")");
 					return this.minimumWorkAmount.get(j);
 				}
 			}
-			System.out.println("cannot find correct minimum work amount, using 0");
+			System.out.println(this.getName()+",cannot find correct minimum work amount, using 0");
 			return 0;
 		}else{
 			return this.minimumWorkAmount.get(i);
@@ -110,9 +108,6 @@ public class Task {
 	}
 	
 	public boolean ifDependentTask(String task){
-		if(this.getName().equals("C") && task.equals("A1")){
-			System.out.println("checking");
-		}
 		for(Task t: this.FSTaskList){
 			if(t.getName().equals(task)){
 				return true;

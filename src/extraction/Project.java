@@ -107,20 +107,42 @@ public class Project {
 			int st1 = d1.getST();
 			int st2 = d2.getST();
 			return Integer.compare(st1, st2);
-		});
-		for(Data d: dataList){
-			if(this.getName().equals("p7")) System.out.print(d.getTaskName()+",");
-		}
-		
+		});	
 		for(int i=0;i<dataList.size()-1;i++){
 			for(int j=i+1;j<dataList.size();j++){
 				if(dataList.get(i).getET()<dataList.get(j).getST()){
-					dataList.get(i).setNextTask(dataList.get(j).getTaskName());
+					dataList.get(i).setReworkTask(dataList.get(j).getTaskName());
 					System.out.println(this.getName()+","+dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
 					break;
 				}
 			}
 		}
+	}
+	
+	public void recordReworkTask(){
+		dataList.sort((d1,d2) -> {
+			int st1 = d1.getST();
+			int st2 = d2.getST();
+			return Integer.compare(st1, st2);
+		});	
+		for(int i=0;i<dataList.size()-1;i++){
+			for(int j=i+1;j<dataList.size();j++){
+				if(dataList.get(j).getST()-dataList.get(i).getET() < 3 && dataList.get(j).getST()-dataList.get(i).getET()>-1 && ifDependentTask(dataList.get(i).getTaskName(),dataList.get(j).getTaskName())){
+					dataList.get(i).setReworkTask(dataList.get(j).getTaskName());
+					System.out.println(this.getName()+","+dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
+					break;
+				}
+			}
+		}
+	}
+	
+	public boolean ifDependentTask(String taskp, String tasks){
+		Task tp = getTaskByName(taskp);
+		Task ts = getTaskByName(tasks);
+		for(Task t: tp.getFSTaskList()){
+			if(t.equals(ts)) return true;
+		}
+		return false;
 	}
 	
 	
