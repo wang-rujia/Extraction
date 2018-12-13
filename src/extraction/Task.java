@@ -10,29 +10,26 @@ public class Task {
 	private String name;
 	private String project;
 	private Map<Integer,Double> minimumWorkAmount;
-	private List<Task> FSTaskList;
+	private List<Task> inputTaskList;
 	private Rework rework;
 	private Delay delay;
 	
 	public Task(){
 		this.name = "";
-		this.FSTaskList = new ArrayList<Task>();
+		this.inputTaskList = new ArrayList<Task>();
 		this.minimumWorkAmount = new HashMap<Integer,Double>();
 	}
 	
 	public Task(String n) {
 		this.name = n;
-		this.FSTaskList = new ArrayList<Task>();
+		this.inputTaskList = new ArrayList<Task>();
 		this.minimumWorkAmount = new HashMap<Integer,Double>();
 	}
 	
-	public void addDependency(String dtype, Task t){
-		if(dtype.equals("FS")) this.FSTaskList.add(t);
-	}
 	
-	public boolean ifFSTask(Task t1){
-		if(this.FSTaskList.isEmpty()) return false;
-		for(Task t2: this.FSTaskList){
+	public boolean ifInputTask(Task t1){
+		if(this.inputTaskList.isEmpty()) return false;
+		for(Task t2: this.inputTaskList){
 			if(t1.getName().equals(t2.getName())){
 				return true;
 			}
@@ -71,16 +68,16 @@ public class Task {
 		return this.rework;
 	}
 	
-	public List<Task> getFSTaskList(){
-		return this.FSTaskList;
+	public List<Task> getInputTaskList(){
+		return this.inputTaskList;
 	}
 	
 	public Map<Integer, Double> getMinimumWorkAmountMap(){
 		return this.minimumWorkAmount;
 	}
 	
-	public void setFSTaskList(List<Task> newList){
-		this.FSTaskList=newList;
+	public void setInputTaskList(List<Task> newList){
+		this.inputTaskList=newList;
 	}
 	
 	public void setDelay(Delay d){
@@ -108,7 +105,7 @@ public class Task {
 	}
 	
 	public boolean ifDependentTask(String task){
-		for(Task t: this.FSTaskList){
+		for(Task t: this.inputTaskList){
 			if(t.getName().equals(task)){
 				return true;
 			}else{
@@ -120,6 +117,10 @@ public class Task {
 			}
 		}
 		return false;
+	}
+	
+	public void addInputTask(Task t){
+		this.inputTaskList.add(t);
 	}
 	
 }

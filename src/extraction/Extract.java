@@ -21,32 +21,30 @@ public class Extract {
 	}
 	
 //GET RESOURCE
-	/*
-	public void extractResource(){
-		int flag1; //resource does not exist
-		int flag2; //resource's skill does not exit
-		for(Data d: dataList){
-			flag1=0;
-			for(Resource r:resourceList){
-				if(r.getName().equals(d.getResourceName())){
-					flag1=1; //resource exists
-					flag2=0;
-					for(String t:r.getTaskList()){
-						if(d.getTaskName().equals(t)){
-							flag2=1; //resource skill exists
-							break;
-						}
-					}
-					if(flag2==0) r.addSkill(d.getTaskName(),d.getResourceCapacity());
-					break;
-				}
-			}
-			if(flag1==0) resourceList.add(new Resource(d.getResourceName(),d.getTaskName(),d.getResourceCapacity()));
-		}
-	}
-	*/
+//	public void extractResource(){
+//		int flag1; //resource does not exist
+//		int flag2; //resource's skill does not exit
+//		for(Data d: dataList){
+//			flag1=0;
+//			for(Resource r:resourceList){
+//				if(r.getName().equals(d.getResourceName())){
+//					flag1=1; //resource exists
+//					flag2=0;
+//					for(String t:r.getTaskList()){
+//						if(d.getTaskName().equals(t)){
+//							flag2=1; //resource skill exists
+//							break;
+//						}
+//					}
+//					if(flag2==0) r.addSkill(d.getTaskName(),d.getResourceCapacity());
+//					break;
+//				}
+//			}
+//			if(flag1==0) resourceList.add(new Resource(d.getResourceName(),d.getTaskName(),d.getResourceCapacity()));
+//		}
+//	}
 	
-//1 EXTRACT TASK
+//1 PRE-PROCESSING
 	public void extractTask(){
 		for(Data d: dataList){
 			int flag=0;
@@ -63,16 +61,14 @@ public class Extract {
 			p.setTaskList(this.taskList);
 			p.countOccurrenceNumber();
 			
-//			boolean ifSeperated;
+// SEPERATE DATA: loop until no change happens
+//			boolean ifChanged;
 //			while(true){
 //				p.countOccurrenceNumber();
-//				ifSeperated = p.seperateByRework();
-//				if(!ifSeperated){ 
-//					break;
-//				}
+//				ifChanged = p.seperateByRework();
+//				if(!ifChanged) break;
 //			}
-			
-//			p.recordNextTask();
+
 			p.recordReworkTask();
 		}
 		keepConsistency();
@@ -231,7 +227,6 @@ public class Extract {
 			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkTask().equals("none")){
 				t.addMinimumWorkAmount(i,wa);
 				ifInit[taskList.indexOf(t)]=true;
-//			}else if(d.getOccurrenceNumberInProject()==i && !this.getTaskByName(d.getTaskName()).ifDependentTask(d.getNextTask())){
 			}else if(d.getOccurrenceNumberInProject()==i && d.getReworkTask().equals("none")){
 				if(t.getMinimumWorkAmount(i) > wa) t.addMinimumWorkAmount(i,wa);	
 			}

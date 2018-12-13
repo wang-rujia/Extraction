@@ -53,13 +53,13 @@ public class ReadInput {
 					if(tagName.equals("TaskDependency")) {
 						NamedNodeMap attrs = tag.getAttributes();
 						String subject = attrs.getNamedItem("subject").getNodeValue();
-						String type = attrs.getNamedItem("type").getNodeValue();
+						//String type = attrs.getNamedItem("type").getNodeValue();
 						String name = attrs.getNamedItem("name").getNodeValue();
 						for(Task t1:this.taskList){
 							if(t1.getName().equals(name))
 								this.taskList.stream()
 									.filter(t2 -> t2.getName().equals(subject))
-									.forEach(t2 -> t2.addDependency(type,t1));
+									.forEach(t2 -> t2.addInputTask(t1));
 						}
 					}
 				}

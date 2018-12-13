@@ -12,10 +12,10 @@ public class Run {
 		final ReadData readData = new ReadData();
 		readData.read("InputFiles/"+fileName2);
 		
-		Extract extraction = new Extract(readData.dataList, readInput.getTaskList());
+		Extract extract = new Extract(readData.dataList, readInput.getTaskList());
 		//extraction.extractResource();
-		extraction.extractTask();
-		extraction.extractUncertainty();
+		extract.extractTask();
+		extract.extractUncertainty();
 	}
 	
 }

@@ -11,14 +11,13 @@ public class Data {
 	private String resource;
 	private double resourceCapacity;
 	private String dependentTask;
-	private String dependencyType; //FF,FS,SS,SF,NONE
 	
 	//extracted information
 	private int occurrenceNumberInProject;
 	private String reworkTask;
 	private int progressWhenEnd10;
 	
-	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt, String dtype){
+	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt){
 		this.dataId=id;
 		this.project = project;
 		this.task=task;
@@ -27,7 +26,6 @@ public class Data {
 		this.resource=r;
 		this.resourceCapacity=Double.parseDouble(rc);
 		this.dependentTask=dt;
-		this.dependencyType=dtype;
 		this.occurrenceNumberInProject=0;
 		this.reworkTask="none";
 		this.progressWhenEnd10=0;
@@ -52,10 +50,6 @@ public class Data {
 	public double getWorkAmount(){
 		double d = (this.et-this.st+1) * this.resourceCapacity;
 		return d;
-	}
-	
-	public String getDependencyType(){
-		return this.dependencyType;
 	}
 	
 	public String getDependentTask(){
