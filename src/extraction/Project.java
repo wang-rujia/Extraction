@@ -128,8 +128,10 @@ public class Project {
 		for(int i=0;i<dataList.size()-1;i++){
 			for(int j=i+1;j<dataList.size();j++){
 				if(dataList.get(j).getST()-dataList.get(i).getET() < 1 && dataList.get(j).getST()-dataList.get(i).getET()>-1 
-						&& ifInputTask(dataList.get(i).getTaskName(),dataList.get(j).getTaskName())){
+						&& ifInputTask(dataList.get(i).getTaskName(),dataList.get(j).getTaskName())
+						&& !dataList.get(j).recordedAsReworkDes){
 					dataList.get(i).setReworkTask(dataList.get(j).getTaskName());
+					dataList.get(j).recordedAsReworkDes=true;
 					System.out.println(this.getName()+","+dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
 					break;
 				}

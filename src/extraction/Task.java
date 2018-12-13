@@ -49,11 +49,11 @@ public class Task {
 		if(minimumWorkAmount.size()<i){
 			for(int j=i; j>0; j--){
 				if(minimumWorkAmount.size()>j){
-					System.out.println(this.getName()+",cannot find correct minimum work amount, using mwa("+j+")");
+					System.out.println(this.getName()+i+",cannot find correct minimum work amount, using mwa("+j+")");
 					return this.minimumWorkAmount.get(j);
 				}
 			}
-			System.out.println(this.getName()+",cannot find correct minimum work amount, using 0");
+			System.out.println(this.getName()+i+",cannot find correct minimum work amount, using 0");
 			return 0;
 		}else{
 			return this.minimumWorkAmount.get(i);

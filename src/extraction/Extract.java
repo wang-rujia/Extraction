@@ -129,8 +129,13 @@ public class Extract {
 		
 	//2.3 REWORK
 		for(Data d: this.dataList) {
-			int pwe10 = (int)Math.floor(d.getWorkAmount()/this.getTaskByName(d.getTaskName()).getMinimumWorkAmount(d.getOccurrenceNumberInProject())*10);
-			d.setProgressWhenEnd10(pwe10);
+			if(this.getTaskByName(d.getTaskName()).getMinimumWorkAmount(d.getOccurrenceNumberInProject()) > 0){
+				int pwe10 = (int)Math.floor(d.getWorkAmount()/this.getTaskByName(d.getTaskName()).getMinimumWorkAmount(d.getOccurrenceNumberInProject())*10);
+				d.setProgressWhenEnd10(pwe10);
+			}else{
+				d.setProgressWhenEnd10(-1);
+			}
+			
 		}
 		for(Task t : this.taskList){
 			//storage: occurrence time, progress, reworkDes (including "none")
@@ -145,6 +150,7 @@ public class Extract {
 			int i=1;
 			Rework rework = new Rework();
 			boolean ifContinue=true; //if occurrence number exist
+			boolean ifProgress=true; //if there is a log of progress>0
 			while(ifContinue){ //i. in every occurrence time
 				ifContinue=false;
 				for(ReworkCalc r1: reworkCalcList){
@@ -152,27 +158,34 @@ public class Extract {
 						Map<Integer, Integer> OverProgressCount = new HashMap<Integer, Integer>();
 						for(int p=1;p<=200;p++){ //ii. count number of > every progress(0.1~20)
 							OverProgressCount.put(p, 0);
+							ifProgress = false;
 							for(ReworkCalc r2: reworkCalcList){
+								if(r2.getProgressWhenEnd10()>0) ifProgress=true;
 								if(r2.getOccurrenceNumber()==i && r2.getProgressWhenEnd10()>=p){
 									OverProgressCount.put(p, OverProgressCount.get(p)+1);
 								}
 							}
+							if(!ifProgress) OverProgressCount.put(-1, -1);
 						}
 						
 						for(ReworkCalc r2: reworkCalcList){
 							String tmpNext=r2.getNext();
 							if(t.ifDependentTask(tmpNext)){
-								int tmpPwe=r2.getProgressWhenEnd10();
+								int tmpPwe10=r2.getProgressWhenEnd10();
 								int count=0;
 								for(ReworkCalc r3: reworkCalcList){
 									if(r3.getOccurrenceNumber()==i && r3.getNext().equals(tmpNext) 
-											&& r3.getProgressWhenEnd10()==tmpPwe) count++;
+											&& r3.getProgressWhenEnd10()==tmpPwe10) count++;
 								}
 								if(count>0){
-									if(!OverProgressCount.containsKey(tmpPwe)){
-										System.out.println(tmpPwe);
+									if(!OverProgressCount.containsKey(tmpPwe10)){
+										System.out.println("Exceptional progress:" + tmpPwe10);
 									}else{
-										rework.addNewValue(i, (double)tmpPwe/10, (double)count/OverProgressCount.get(tmpPwe), this.getTaskByName(tmpNext));
+										if(tmpPwe10<0){
+											rework.addNewValue(i, (double)tmpPwe10/10, 1.0 , this.getTaskByName(tmpNext));
+										}else{
+											rework.addNewValue(i, (double)tmpPwe10/10, (double)count/OverProgressCount.get(tmpPwe10), this.getTaskByName(tmpNext));
+										}
 									}
 								}
 							}
@@ -224,11 +237,11 @@ public class Extract {
 		for(Data d: this.dataList){
 			Task t = this.getTaskByName(d.getTaskName());
 			wa = d.getWorkAmount(); 
-			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkTask().equals("none")){
+			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkTask().equals("none") && wa>0){
 				t.addMinimumWorkAmount(i,wa);
 				ifInit[taskList.indexOf(t)]=true;
 			}else if(d.getOccurrenceNumberInProject()==i && d.getReworkTask().equals("none")){
-				if(t.getMinimumWorkAmount(i) > wa) t.addMinimumWorkAmount(i,wa);	
+				if(t.getMinimumWorkAmount(i) > wa && wa>0) t.addMinimumWorkAmount(i,wa);	
 			}
 		}
 	}
