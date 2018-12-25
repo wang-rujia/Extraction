@@ -17,6 +17,9 @@ public class Data {
 	private String reworkTask;
 	private int progressWhenEnd10;
 	
+	//For recording next task
+	public boolean recordedAsReworkDes;
+	
 	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt){
 		this.dataId=id;
 		this.project = project;
@@ -29,6 +32,7 @@ public class Data {
 		this.occurrenceNumberInProject=0;
 		this.reworkTask="none";
 		this.progressWhenEnd10=0;
+		this.recordedAsReworkDes = false;
 	}
 	
 	public String getId(){
