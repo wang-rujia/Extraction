@@ -32,6 +32,18 @@ public class Delay {
 		return m;
 	}
 	
+	public List<Integer> getOccurrenceNumber(){
+		return this.occurrenceNumber;
+	}
+	
+	public int getMaxOccurrenceNumber(){
+		int i = 0;
+		for(int j=0;j<occurrenceNumber.size();j++){
+			if(occurrenceNumber.get(j)>i) i=occurrenceNumber.get(j);
+		}
+		return i;
+	}
+	
 	//<<<<<TEST FOR PRINT>>>>>
 	public void print(){
 		for(int i=0; i<occurrenceNumber.size();i++){

@@ -80,6 +80,22 @@ public class Rework {
 		}
 		return null;
 	}
+
+	
+	public List<Integer> getOccurrenceNumberList(){
+		return this.occurrenceNumber;
+	}
+	public List<Double> getProgressList(){
+		return this.progress;
+	}
+	public List<Double> getNoReworkPossibilityList(){
+		return this.noReworkPossibility;
+	}
+	public List<Task> getReworkFromList(){
+		return this.reworkFrom;
+	}
+	
+	
 	
 	//<<<<<TEST FOR PRINT>>>>>
 	public void print(){

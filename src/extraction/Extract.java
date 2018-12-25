@@ -1,5 +1,8 @@
 package extraction;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -232,6 +235,54 @@ public class Extract {
 			}
 		}
 	}
+	
+	public void saveAsFile(String filePath){
+		try{
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filePath)));
+			pw.println("<?xml version=\"1.0\"?>");
+			pw.println("<!--Extracted Result-->");
+			
+			pw.println("<NodeElementList>");
+			for(Task t: this.taskList){
+				pw.println("	<TaskNode>");
+				
+				pw.println("		<Name>"+t.getName()+"</Name>");
+				
+				for(int i : t.getMinimumWorkAmountMap().keySet()){
+					pw.println("		<MinimumWorkAmount>"+i+","+t.getMinimumWorkAmount(i)+"</MinimumWorkAmount>");
+				}
+				
+				Delay d = t.getDelay();
+				for(int i=1; i<=d.getMaxOccurrenceNumber();i++){
+					Map<Double, Integer> map = d.getDelayMap(i);
+					double p = 1.0;
+					int previousKey = 0;
+					for(Double delayKey: map.keySet()){
+						p = p-delayKey;
+						if(previousKey!=0)
+							pw.println("		<Delay>"+i+","+p+","+previousKey+"</Delay>");
+						previousKey = map.get(delayKey);
+						p = delayKey;
+					}
+				}
+				
+				Rework r = t.getRework();
+				
+				for(int i=0;i<r.getOccurrenceNumberList().size();i++){
+					pw.println("		<Rework>"+r.getOccurrenceNumberList().get(i)+","+r.getProgressList().get(i)+","
+							+r.getNoReworkPossibilityList().get(i)+","+r.getReworkFromList().get(i).getName()+"</Rework>");
+				}
+				
+				pw.println("	</TaskNode>");
+			}
+			pw.println("</NodeElementList>");
+			
+			pw.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	
 	
 	public List<Task> getTaskList(){

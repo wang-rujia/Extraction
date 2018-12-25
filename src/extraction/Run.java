@@ -16,6 +16,7 @@ public class Run {
 		//extraction.extractResource();
 		extract.extractTask();
 		extract.extractUncertainty();
+		extract.saveAsFile("result.xml");
 	}
 	
 }
