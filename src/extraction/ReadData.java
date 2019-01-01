@@ -21,7 +21,7 @@ public class ReadData {
 			while(line!=null){
 				String[] lineElement = line.split(",");
 				this.dataList.add(new Data(lineElement[0],lineElement[1],lineElement[2],lineElement[3],lineElement[4],lineElement[5],lineElement[6],
-						lineElement[7]));
+						lineElement[7],lineElement[8]));
 				line=br.readLine();
 			}
 			br.close();

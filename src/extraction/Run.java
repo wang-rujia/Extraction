@@ -4,7 +4,7 @@ public class Run {
 	public static void main(String[] args) {
 
 		String fileName1 = "case2_input.xml";
-		String fileName2 = "log_case2_1228.txt";
+		String fileName2 = "log.txt";
 
 		final ReadInput readInput = new ReadInput();
 		readInput.read("InputFiles/"+fileName1);
@@ -16,7 +16,7 @@ public class Run {
 		//extraction.extractResource();
 		extract.extractTask();
 		extract.extractUncertainty();
-		extract.saveAsFile("result1228.xml");
+		extract.saveAsFile("result.xml");
 	}
 	
 }

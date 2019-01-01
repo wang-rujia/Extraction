@@ -20,8 +20,8 @@ public class Project {
 		this.dataList.add(d);
 	}
 	
-	public void addData(String id, String project, String task, String st, String et, String r, String rc, String dt, int oc){
-		Data d=new Data(id,project,task,st,et,r,rc,dt);
+	public void addData(String id, String project, String task, String st, String et, String r, String rc, String dt, String rf, int oc){
+		Data d=new Data(id,project,task,st,et,r,rc,dt,rf);
 		d.setOccurrenceNumberInProject(oc);
 		this.dataList.add(d);
 	}
@@ -57,7 +57,7 @@ public class Project {
 						this.addData(UUID.randomUUID().toString(),this.getName(),d1.getTaskName(),
 								String.valueOf(d2.getET()+1),String.valueOf(d1.getET()),
 								d1.getResourceName(),String.valueOf(d1.getResourceCapacity()),
-								d1.getDependentTask(), d1.getOccurrenceNumberInProject()+1);
+								d1.getDependentTask(), d1.getReworkFromInLog(),d1.getOccurrenceNumberInProject()+1);
 						d1.setET(d2.getST()-1);
 						return true;
 					}
@@ -132,7 +132,7 @@ public class Project {
 						&& !dataList.get(j).recordedAsReworkDes){
 					dataList.get(i).setReworkTask(dataList.get(j).getTaskName());
 					dataList.get(j).recordedAsReworkDes=true;
-					System.out.println(this.getName()+","+dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
+					//System.out.println(this.getName()+","+dataList.get(i).getTaskName()+"→"+dataList.get(j).getTaskName());
 					break;
 				}
 			}

@@ -11,6 +11,7 @@ public class Data {
 	private String resource;
 	private double resourceCapacity;
 	private String dependentTask;
+	private String reworkFromInLog;
 	
 	//extracted information
 	private int occurrenceNumberInProject;
@@ -20,7 +21,7 @@ public class Data {
 	//For recording next task
 	public boolean recordedAsReworkDes;
 	
-	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt){
+	public Data(String id, String project, String task, String st, String et, String r, String rc, String dt,String rf){
 		this.dataId=id;
 		this.project = project;
 		this.task=task;
@@ -33,6 +34,11 @@ public class Data {
 		this.reworkTask="none";
 		this.progressWhenEnd10=0;
 		this.recordedAsReworkDes = false;
+		this.reworkFromInLog = rf;
+	}
+	
+	public String getReworkFromInLog(){
+		return this.reworkFromInLog;
 	}
 	
 	public String getId(){

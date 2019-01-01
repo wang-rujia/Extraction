@@ -146,7 +146,7 @@ public class Extract {
 			for(Data d : this.dataList){
 				if(d.getTaskName().equals(t.getName())){
 					reworkCalcList.add(new ReworkCalc(d.getOccurrenceNumberInProject()
-							,d.getProgressWhenEnd10(), d.getReworkTask()));
+							,d.getProgressWhenEnd10(), d.getReworkFromInLog()));
 				}
 			}
 			//calculation
@@ -240,10 +240,10 @@ public class Extract {
 		for(Data d: this.dataList){
 			Task t = this.getTaskByName(d.getTaskName());
 			wa = d.getWorkAmount(); 
-			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkTask().equals("none") && wa>0){
+			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkFromInLog().equals("None") && wa>0){
 				t.addMinimumWorkAmount(i,wa);
 				ifInit[taskList.indexOf(t)]=true;
-			}else if(d.getOccurrenceNumberInProject()==i && d.getReworkTask().equals("none")){
+			}else if(d.getOccurrenceNumberInProject()==i && d.getReworkFromInLog().equals("None")){
 				if(t.getMinimumWorkAmount(i) > wa && wa>0) t.addMinimumWorkAmount(i,wa);	
 			}
 		}
