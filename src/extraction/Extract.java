@@ -62,8 +62,8 @@ public class Extract {
 		}
 		for(Project p: projectList){
 			p.setTaskList(this.taskList);
-			p.countOccurrenceNumber();
-			
+//			p.countOccurrenceNumber();
+			p.combineInterruptData();
 // SEPERATE DATA: loop until no change happens
 //			boolean ifChanged;
 //			while(true){
@@ -71,8 +71,7 @@ public class Extract {
 //				ifChanged = p.seperateByRework();
 //				if(!ifChanged) break;
 //			}
-
-			p.recordReworkTask();
+//			p.recordReworkTask();
 		}
 		keepConsistency();
 	}
@@ -136,7 +135,7 @@ public class Extract {
 				int pwe10 = (int)Math.floor(d.getWorkAmount()/this.getTaskByName(d.getTaskName()).getMinimumWorkAmount(d.getOccurrenceNumberInProject())*10);
 				d.setProgressWhenEnd10(pwe10);
 			}else{
-				d.setProgressWhenEnd10(-1);
+				d.setProgressWhenEnd10(-10);
 			}
 			
 		}
@@ -159,7 +158,7 @@ public class Extract {
 				for(ReworkCalc r1: reworkCalcList){
 					if(r1.getOccurrenceNumber()==i){
 						Map<Integer, Integer> OverProgressCount = new HashMap<Integer, Integer>();
-						for(int p=1;p<=200;p++){ //ii. count number of > every progress(0.1~20)
+						for(int p=-10;p<=200;p++){ //ii. count number of > every progress(0~20)
 							OverProgressCount.put(p, 0);
 							ifProgress = false;
 							for(ReworkCalc r2: reworkCalcList){

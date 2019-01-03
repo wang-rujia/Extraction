@@ -102,6 +102,45 @@ public class Project {
 		}
 	}
 	
+	public void combineInterruptData(){
+		//sort by d.ST
+		dataList.sort((d1,d2) -> {
+			int st1 = d1.getST();
+			int st2 = d2.getST();
+			return Integer.compare(st1, st2);
+		});
+		//count occurrence number
+		int tcount;
+		int[] count = new int[taskList.size()];
+		for(Data d : dataList){
+			tcount=0;
+			for(Task t: taskList){
+				tcount++;
+				if(d.getTaskName().equals(t.getName())){
+					if(!d.getReworkFromInLog().equals("Stop")) count[tcount-1]++;
+					d.setOccurrenceNumberInProject(count[tcount-1]);
+					break;
+				}
+			}
+		}
+		//work with interrupted data
+		List<Data> tempDataList = new ArrayList<Data>();
+		for(Data d1 : dataList){
+			if(!d1.getReworkFromInLog().equals("Stop")){
+				for(Data d2: dataList){
+					if(d1.getTaskName().equals(d2.getTaskName())
+							&& d2.getReworkFromInLog().equals("Stop")
+							&& d2.getOccurrenceNumberInProject() == d1.getOccurrenceNumberInProject()-1
+							&& !tempDataList.contains(d2)){
+						tempDataList.add(d2);
+						d1.setST(d1.getST()-d2.getET()+d2.getST());
+					}
+				}
+			}
+		}
+		for(Data d: tempDataList) dataList.remove(d);
+	}
+	
 //	public void recordNextTask(){
 //		dataList.sort((d1,d2) -> {
 //			int st1 = d1.getST();
