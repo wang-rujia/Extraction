@@ -1,5 +1,7 @@
 package extraction;
 
+import java.util.Random;
+
 public class Data {
 	
 	//data content
@@ -37,8 +39,23 @@ public class Data {
 		this.reworkFromInLog = rf;
 	}
 	
+	public void setReworkFromInLog(){
+		String re[] = reworkFromInLog.split(";");
+		if(re.length>1){
+			double unit = (double)(1.0/re.length);
+			Random rand = new Random();
+			double p=rand.nextDouble();
+			int count=0;
+			for(double a=unit;a<=1;a+=unit){
+				if(p<a) reworkFromInLog=re[count];
+				count++;
+			}
+		}
+	}
+	
+	
 	public String getReworkFromInLog(){
-		return this.reworkFromInLog;
+		return reworkFromInLog;
 	}
 	
 	public String getId(){

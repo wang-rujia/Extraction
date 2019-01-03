@@ -50,6 +50,7 @@ public class Extract {
 //1 PRE-PROCESSING
 	public void extractTask(){
 		for(Data d: dataList){
+			d.setReworkFromInLog();
 			int flag=0;
 			for(Project p: projectList){
 				if(d.getProjectName().equals(p.getName())){
