@@ -3,220 +3,394 @@
 <NodeElementList>
 	<TaskNode>
 		<Name>A</Name>
-		<MinimumWorkAmount>1,21.0</MinimumWorkAmount>
+		<MinimumWorkAmount>1,20.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,8</Delay>
+		<Delay>1,0.09999999999999998,7</Delay>
 		<Delay>1,0.09999999999999998,6</Delay>
 		<Delay>1,0.09999999999999998,5</Delay>
-		<Delay>1,0.09999999999999998,4</Delay>
-		<Delay>1,0.09999999999999998,3</Delay>
+		<Delay>1,0.16666666666666663,4</Delay>
+		<Delay>1,0.19999999999999996,3</Delay>
 		<Delay>1,0.09999999999999998,2</Delay>
-		<Delay>1,0.19999999999999996,1</Delay>
+		<Delay>1,0.06666666666666665,1</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>B</Name>
-		<MinimumWorkAmount>1,50.0</MinimumWorkAmount>
+		<MinimumWorkAmount>1,49.0</MinimumWorkAmount>
 		<MinimumWorkAmount>2,2.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,29</Delay>
-		<Delay>1,0.09999999999999998,26</Delay>
-		<Delay>1,0.09999999999999998,21</Delay>
-		<Delay>1,0.09999999999999998,16</Delay>
-		<Delay>1,0.09999999999999998,13</Delay>
-		<Delay>1,0.19999999999999996,10</Delay>
-		<Delay>1,0.2,4</Delay>
-		<Delay>2,0.5,1</Delay>
+		<MinimumWorkAmount>3,2.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,35</Delay>
+		<Delay>1,0.033333333333333326,31</Delay>
+		<Delay>1,0.033333333333333326,28</Delay>
+		<Delay>1,0.033333333333333326,21</Delay>
+		<Delay>1,0.033333333333333326,20</Delay>
+		<Delay>1,0.09999999999999998,19</Delay>
+		<Delay>1,0.06666666666666665,18</Delay>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,12</Delay>
+		<Delay>1,0.06666666666666665,11</Delay>
+		<Delay>1,0.033333333333333326,10</Delay>
+		<Delay>1,0.033333333333333326,9</Delay>
+		<Delay>1,0.033333333333333326,7</Delay>
+		<Delay>1,0.033333333333333326,5</Delay>
+		<Delay>1,0.09999999999999998,4</Delay>
+		<Delay>1,0.09999999999999998,3</Delay>
+		<Delay>1,0.06666666666666665,2</Delay>
+		<Delay>1,0.03333333333333333,1</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>C</Name>
 		<MinimumWorkAmount>1,28.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,10.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,9.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,12</Delay>
-		<Delay>1,0.09999999999999998,11</Delay>
-		<Delay>1,0.09999999999999998,8</Delay>
-		<Delay>1,0.09999999999999998,7</Delay>
-		<Delay>1,0.09999999999999998,5</Delay>
-		<Delay>1,0.09999999999999998,4</Delay>
-		<Delay>1,0.09999999999999998,3</Delay>
-		<Delay>1,0.1,2</Delay>
-		<Delay>1,0.1,1</Delay>
-		<Delay>2,0.1428571428571428,3</Delay>
-		<Delay>2,0.1428571428571428,2</Delay>
-		<Delay>2,0.1428571428571428,1</Delay>
-		<Delay>3,0.5,1</Delay>
+		<MinimumWorkAmount>2,6.0</MinimumWorkAmount>
+		<MinimumWorkAmount>3,6.0</MinimumWorkAmount>
+		<MinimumWorkAmount>4,7.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,9</Delay>
+		<Delay>1,0.06666666666666665,8</Delay>
+		<Delay>1,0.19999999999999996,7</Delay>
+		<Delay>1,0.033333333333333326,5</Delay>
+		<Delay>1,0.1333333333333333,4</Delay>
+		<Delay>1,0.19999999999999996,3</Delay>
+		<Delay>1,0.1333333333333333,2</Delay>
+		<Delay>1,0.09999999999999998,1</Delay>
+		<Delay>2,0.1578947368421051,6</Delay>
+		<Delay>2,0.21052631578947345,5</Delay>
+		<Delay>2,0.3157894736842104,4</Delay>
+		<Delay>2,0.10526315789473684,3</Delay>
+		<Delay>2,0.10526315789473684,2</Delay>
+		<Delay>2,0.05263157894736842,1</Delay>
+		<Delay>3,0.5,4</Delay>
+		<Delay>3,0.25,2</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>D</Name>
-		<MinimumWorkAmount>1,100.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,27.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,27.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,24</Delay>
-		<Delay>1,0.09999999999999998,9</Delay>
-		<Delay>1,0.09999999999999998,8</Delay>
-		<Delay>1,0.19999999999999996,4</Delay>
-		<Delay>2,0.25,3</Delay>
-		<Delay>2,0.25,2</Delay>
-		<Rework>1,1.0,0.625,C</Rework>
-		<Rework>1,0.9,0.2,C</Rework>
-		<Rework>2,1.0,0.5,C</Rework>
+		<MinimumWorkAmount>1,97.0</MinimumWorkAmount>
+		<MinimumWorkAmount>2,26.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,28</Delay>
+		<Delay>1,0.033333333333333326,24</Delay>
+		<Delay>1,0.033333333333333326,21</Delay>
+		<Delay>1,0.06666666666666665,20</Delay>
+		<Delay>1,0.033333333333333326,19</Delay>
+		<Delay>1,0.09999999999999998,16</Delay>
+		<Delay>1,0.033333333333333326,15</Delay>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.09999999999999998,11</Delay>
+		<Delay>1,0.033333333333333326,9</Delay>
+		<Delay>1,0.09999999999999998,7</Delay>
+		<Delay>1,0.06666666666666665,6</Delay>
+		<Delay>1,0.06666666666666665,4</Delay>
+		<Delay>1,0.033333333333333326,3</Delay>
+		<Delay>1,0.033333333333333326,2</Delay>
+		<Delay>1,0.09999999999999998,1</Delay>
+		<Delay>2,0.22222222222222232,5</Delay>
+		<Delay>2,0.11111111111111116,4</Delay>
+		<Delay>2,0.11111111111111116,2</Delay>
+		<Delay>2,0.2222222222222222,1</Delay>
+		<Rework>1,0.9,0.03333333333333333,C</Rework>
+		<Rework>1,1.0,0.27586206896551724,C</Rework>
+		<Rework>1,1.1,0.35714285714285715,C</Rework>
+		<Rework>1,1.2,0.2,C</Rework>
+		<Rework>2,1.0,0.1111111111111111,C</Rework>
+		<Rework>2,1.1,0.3333333333333333,C</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>E</Name>
-		<MinimumWorkAmount>1,153.0</MinimumWorkAmount>
+		<MinimumWorkAmount>1,149.0</MinimumWorkAmount>
 		<MinimumWorkAmount>2,7.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,71</Delay>
-		<Delay>1,0.09999999999999998,58</Delay>
-		<Delay>1,0.09999999999999998,53</Delay>
-		<Delay>1,0.09999999999999998,35</Delay>
-		<Delay>1,0.09999999999999998,20</Delay>
-		<Delay>1,0.09999999999999998,15</Delay>
-		<Delay>1,0.09999999999999998,12</Delay>
-		<Delay>1,0.2,6</Delay>
-		<Delay>2,0.19999999999999996,14</Delay>
-		<Delay>2,0.19999999999999996,12</Delay>
-		<Delay>2,0.2,3</Delay>
+		<MinimumWorkAmount>3,9.0</MinimumWorkAmount>
+		<MinimumWorkAmount>4,8.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,110</Delay>
+		<Delay>1,0.033333333333333326,105</Delay>
+		<Delay>1,0.033333333333333326,99</Delay>
+		<Delay>1,0.033333333333333326,85</Delay>
+		<Delay>1,0.033333333333333326,83</Delay>
+		<Delay>1,0.06666666666666665,77</Delay>
+		<Delay>1,0.033333333333333326,64</Delay>
+		<Delay>1,0.033333333333333326,56</Delay>
+		<Delay>1,0.033333333333333326,41</Delay>
+		<Delay>1,0.033333333333333326,37</Delay>
+		<Delay>1,0.06666666666666665,31</Delay>
+		<Delay>1,0.033333333333333326,29</Delay>
+		<Delay>1,0.06666666666666665,28</Delay>
+		<Delay>1,0.033333333333333326,26</Delay>
+		<Delay>1,0.033333333333333326,25</Delay>
+		<Delay>1,0.06666666666666665,24</Delay>
+		<Delay>1,0.033333333333333326,21</Delay>
+		<Delay>1,0.033333333333333326,16</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,10</Delay>
+		<Delay>1,0.033333333333333326,7</Delay>
+		<Delay>1,0.033333333333333326,3</Delay>
+		<Delay>1,0.06666666666666665,2</Delay>
+		<Delay>2,0.0625,23</Delay>
+		<Delay>2,0.0625,17</Delay>
+		<Delay>2,0.125,15</Delay>
+		<Delay>2,0.0625,14</Delay>
+		<Delay>2,0.0625,13</Delay>
+		<Delay>2,0.1875,12</Delay>
+		<Delay>2,0.125,4</Delay>
+		<Delay>2,0.25,1</Delay>
+		<Delay>3,0.5,10</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>F</Name>
 		<MinimumWorkAmount>1,93.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,30.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,30.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,12</Delay>
+		<MinimumWorkAmount>2,29.0</MinimumWorkAmount>
+		<MinimumWorkAmount>3,31.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.09999999999999998,15</Delay>
+		<Delay>1,0.06666666666666665,13</Delay>
+		<Delay>1,0.06666666666666665,11</Delay>
+		<Delay>1,0.06666666666666665,10</Delay>
 		<Delay>1,0.09999999999999998,9</Delay>
-		<Delay>1,0.19999999999999996,8</Delay>
-		<Delay>1,0.19999999999999996,7</Delay>
-		<Delay>1,0.3,5</Delay>
-		<Delay>2,0.6666666666666665,1</Delay>
-		<Delay>3,0.5,1</Delay>
-		<Rework>2,1.0,0.6666666666666666,E</Rework>
+		<Delay>1,0.06666666666666665,8</Delay>
+		<Delay>1,0.1333333333333333,7</Delay>
+		<Delay>1,0.09999999999999998,6</Delay>
+		<Delay>1,0.16666666666666663,5</Delay>
+		<Delay>1,0.033333333333333326,4</Delay>
+		<Delay>1,0.03333333333333333,1</Delay>
+		<Delay>2,0.09090909090909094,5</Delay>
+		<Delay>2,0.18181818181818188,4</Delay>
+		<Delay>2,0.09090909090909094,3</Delay>
+		<Delay>2,0.18181818181818188,2</Delay>
+		<Delay>2,0.3636363636363637,1</Delay>
+		<Rework>1,1.0,0.06666666666666667,E</Rework>
+		<Rework>2,1.0,0.09090909090909091,E</Rework>
+		<Rework>2,1.1,0.25,E</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>G</Name>
-		<MinimumWorkAmount>1,76.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,17</Delay>
-		<Delay>1,0.09999999999999998,13</Delay>
-		<Delay>1,0.09999999999999998,10</Delay>
-		<Delay>1,0.09999999999999998,9</Delay>
-		<Delay>1,0.09999999999999998,8</Delay>
-		<Delay>1,0.09999999999999998,7</Delay>
-		<Delay>1,0.19999999999999998,5</Delay>
-		<Delay>1,0.1,3</Delay>
+		<MinimumWorkAmount>1,75.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,25</Delay>
+		<Delay>1,0.06666666666666665,23</Delay>
+		<Delay>1,0.033333333333333326,18</Delay>
+		<Delay>1,0.033333333333333326,16</Delay>
+		<Delay>1,0.06666666666666665,15</Delay>
+		<Delay>1,0.06666666666666665,14</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.06666666666666665,12</Delay>
+		<Delay>1,0.033333333333333326,9</Delay>
+		<Delay>1,0.06666666666666665,8</Delay>
+		<Delay>1,0.06666666666666665,7</Delay>
+		<Delay>1,0.09999999999999998,6</Delay>
+		<Delay>1,0.06666666666666665,5</Delay>
+		<Delay>1,0.033333333333333326,4</Delay>
+		<Delay>1,0.033333333333333326,3</Delay>
+		<Delay>1,0.06666666666666665,2</Delay>
+		<Delay>1,0.06666666666666665,1</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>H</Name>
-		<MinimumWorkAmount>1,52.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,26.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,26.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,35</Delay>
-		<Delay>1,0.09999999999999998,28</Delay>
-		<Delay>1,0.09999999999999998,22</Delay>
-		<Delay>1,0.09999999999999998,19</Delay>
-		<Delay>1,0.09999999999999998,18</Delay>
-		<Delay>1,0.09999999999999998,12</Delay>
-		<Delay>1,0.09999999999999998,9</Delay>
-		<Delay>1,0.1,5</Delay>
-		<Delay>2,0.16666666666666663,12</Delay>
-		<Delay>2,0.16666666666666663,10</Delay>
-		<Delay>2,0.16666666666666663,7</Delay>
-		<Delay>2,0.16666666666666663,6</Delay>
-		<Delay>2,0.16666666666666666,3</Delay>
-		<Delay>3,0.5,3</Delay>
-		<Rework>1,1.3,0.2,E</Rework>
-		<Rework>1,1.2,0.16666666666666666,E</Rework>
-		<Rework>1,0.9,0.1,E</Rework>
+		<MinimumWorkAmount>1,49.0</MinimumWorkAmount>
+		<MinimumWorkAmount>2,25.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,33</Delay>
+		<Delay>1,0.033333333333333326,30</Delay>
+		<Delay>1,0.033333333333333326,29</Delay>
+		<Delay>1,0.033333333333333326,27</Delay>
+		<Delay>1,0.033333333333333326,23</Delay>
+		<Delay>1,0.033333333333333326,22</Delay>
+		<Delay>1,0.033333333333333326,20</Delay>
+		<Delay>1,0.033333333333333326,18</Delay>
+		<Delay>1,0.1333333333333333,17</Delay>
+		<Delay>1,0.033333333333333326,16</Delay>
+		<Delay>1,0.033333333333333326,12</Delay>
+		<Delay>1,0.033333333333333326,10</Delay>
+		<Delay>1,0.06666666666666665,9</Delay>
+		<Delay>1,0.033333333333333326,8</Delay>
+		<Delay>1,0.033333333333333326,7</Delay>
+		<Delay>1,0.06666666666666665,5</Delay>
+		<Delay>1,0.09999999999999998,3</Delay>
+		<Delay>1,0.033333333333333326,2</Delay>
+		<Delay>1,0.1333333333333333,1</Delay>
+		<Delay>2,0.08333333333333337,11</Delay>
+		<Delay>2,0.08333333333333337,10</Delay>
+		<Delay>2,0.2500000000000001,8</Delay>
+		<Delay>2,0.16666666666666663,4</Delay>
+		<Delay>2,0.08333333333333331,2</Delay>
+		<Delay>2,0.24999999999999994,1</Delay>
+		<Rework>1,1.3,0.07692307692307693,E</Rework>
+		<Rework>1,1.2,0.06666666666666667,E</Rework>
+		<Rework>1,1.6,0.5,E</Rework>
+		<Rework>1,1.4,0.14285714285714285,E</Rework>
+		<Rework>2,1.3,0.2,E</Rework>
+		<Rework>2,1.1,0.14285714285714285,E</Rework>
+		<Rework>2,1.4,0.5,E</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>I</Name>
-		<MinimumWorkAmount>1,187.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,17.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,17.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,29</Delay>
-		<Delay>1,0.09999999999999998,27</Delay>
-		<Delay>1,0.09999999999999998,23</Delay>
-		<Delay>1,0.09999999999999998,15</Delay>
-		<Delay>1,0.19999999999999996,11</Delay>
-		<Delay>1,0.09999999999999998,10</Delay>
-		<Delay>1,0.1,8</Delay>
-		<Delay>1,0.1,6</Delay>
-		<Delay>2,0.5,1</Delay>
-		<Rework>1,1.1,0.6666666666666666,B</Rework>
+		<MinimumWorkAmount>1,181.0</MinimumWorkAmount>
+		<MinimumWorkAmount>2,15.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,37</Delay>
+		<Delay>1,0.033333333333333326,33</Delay>
+		<Delay>1,0.033333333333333326,31</Delay>
+		<Delay>1,0.033333333333333326,30</Delay>
+		<Delay>1,0.1333333333333333,24</Delay>
+		<Delay>1,0.06666666666666665,23</Delay>
+		<Delay>1,0.06666666666666665,21</Delay>
+		<Delay>1,0.033333333333333326,20</Delay>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.06666666666666665,16</Delay>
+		<Delay>1,0.1333333333333333,15</Delay>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.06666666666666665,12</Delay>
+		<Delay>1,0.06666666666666665,11</Delay>
+		<Delay>1,0.033333333333333326,9</Delay>
+		<Delay>1,0.06666666666666665,8</Delay>
+		<Delay>1,0.03333333333333333,5</Delay>
+		<Delay>2,0.125,2</Delay>
+		<Delay>2,0.625,1</Delay>
+		<Rework>1,1.0,0.3,B</Rework>
+		<Rework>1,1.1,0.15384615384615385,B</Rework>
+		<Rework>2,1.1,1.0,B</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>J</Name>
-		<MinimumWorkAmount>1,110.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,17.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,38</Delay>
-		<Delay>1,0.09999999999999998,37</Delay>
-		<Delay>1,0.09999999999999998,36</Delay>
-		<Delay>1,0.09999999999999998,30</Delay>
-		<Delay>1,0.09999999999999998,20</Delay>
+		<MinimumWorkAmount>1,99.0</MinimumWorkAmount>
+		<MinimumWorkAmount>2,16.0</MinimumWorkAmount>
+		<MinimumWorkAmount>3,21.0</MinimumWorkAmount>
+		<MinimumWorkAmount>4,21.0</MinimumWorkAmount>
+		<MinimumWorkAmount>5,21.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,64</Delay>
+		<Delay>1,0.033333333333333326,60</Delay>
+		<Delay>1,0.033333333333333326,59</Delay>
+		<Delay>1,0.033333333333333326,55</Delay>
+		<Delay>1,0.033333333333333326,47</Delay>
+		<Delay>1,0.06666666666666665,45</Delay>
+		<Delay>1,0.033333333333333326,44</Delay>
+		<Delay>1,0.033333333333333326,41</Delay>
+		<Delay>1,0.033333333333333326,35</Delay>
+		<Delay>1,0.06666666666666665,34</Delay>
+		<Delay>1,0.033333333333333326,32</Delay>
+		<Delay>1,0.033333333333333326,31</Delay>
+		<Delay>1,0.033333333333333326,27</Delay>
+		<Delay>1,0.033333333333333326,25</Delay>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.033333333333333326,12</Delay>
+		<Delay>1,0.06666666666666665,11</Delay>
+		<Delay>1,0.033333333333333326,8</Delay>
 		<Delay>1,0.09999999999999998,6</Delay>
-		<Delay>1,0.19999999999999998,5</Delay>
-		<Delay>1,0.1,4</Delay>
-		<Delay>2,0.4999999999999999,6</Delay>
-		<Delay>2,0.16666666666666663,5</Delay>
-		<Delay>2,0.16666666666666666,1</Delay>
+		<Delay>1,0.06666666666666665,4</Delay>
+		<Delay>1,0.033333333333333326,3</Delay>
+		<Delay>1,0.03333333333333333,1</Delay>
+		<Delay>2,0.1428571428571428,10</Delay>
+		<Delay>2,0.1428571428571428,9</Delay>
+		<Delay>2,0.1428571428571428,6</Delay>
+		<Delay>2,0.2857142857142857,5</Delay>
 	</TaskNode>
 	<TaskNode>
 		<Name>K</Name>
-		<MinimumWorkAmount>1,157.0</MinimumWorkAmount>
+		<MinimumWorkAmount>1,150.0</MinimumWorkAmount>
 		<MinimumWorkAmount>2,37.0</MinimumWorkAmount>
-		<MinimumWorkAmount>3,44.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,44</Delay>
-		<Delay>1,0.09999999999999998,40</Delay>
-		<Delay>1,0.09999999999999998,38</Delay>
-		<Delay>1,0.19999999999999996,33</Delay>
-		<Delay>1,0.09999999999999998,29</Delay>
-		<Delay>1,0.09999999999999998,18</Delay>
-		<Delay>1,0.1,7</Delay>
-		<Delay>1,0.1,2</Delay>
-		<Delay>2,0.19999999999999996,7</Delay>
-		<Delay>2,0.19999999999999996,6</Delay>
-		<Delay>2,0.2,3</Delay>
-		<Rework>1,1.0,0.1,J</Rework>
-		<Rework>1,1.1,0.14285714285714285,J</Rework>
-		<Rework>1,1.2,0.2,J</Rework>
-		<Rework>2,1.0,0.2,J</Rework>
-		<Rework>2,1.1,1.0,J</Rework>
+		<Delay>1,0.033333333333333326,103</Delay>
+		<Delay>1,0.033333333333333326,77</Delay>
+		<Delay>1,0.033333333333333326,66</Delay>
+		<Delay>1,0.06666666666666665,62</Delay>
+		<Delay>1,0.033333333333333326,55</Delay>
+		<Delay>1,0.06666666666666665,49</Delay>
+		<Delay>1,0.033333333333333326,47</Delay>
+		<Delay>1,0.06666666666666665,39</Delay>
+		<Delay>1,0.033333333333333326,38</Delay>
+		<Delay>1,0.033333333333333326,35</Delay>
+		<Delay>1,0.033333333333333326,34</Delay>
+		<Delay>1,0.06666666666666665,32</Delay>
+		<Delay>1,0.033333333333333326,29</Delay>
+		<Delay>1,0.033333333333333326,24</Delay>
+		<Delay>1,0.033333333333333326,19</Delay>
+		<Delay>1,0.06666666666666665,17</Delay>
+		<Delay>1,0.033333333333333326,15</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,11</Delay>
+		<Delay>1,0.09999999999999998,10</Delay>
+		<Delay>1,0.033333333333333326,3</Delay>
+		<Delay>1,0.03333333333333333,2</Delay>
+		<Delay>2,0.16666666666666663,21</Delay>
+		<Delay>2,0.16666666666666663,9</Delay>
+		<Delay>2,0.33333333333333326,6</Delay>
+		<Delay>2,0.16666666666666666,5</Delay>
+		<Rework>1,1.2,0.25,J</Rework>
+		<Rework>1,1.3,0.1111111111111111,J</Rework>
+		<Rework>1,1.0,0.06666666666666667,J</Rework>
+		<Rework>2,1.1,0.4,J</Rework>
+		<Rework>3,-1.0,1.0,J</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>L</Name>
-		<MinimumWorkAmount>1,143.0</MinimumWorkAmount>
-		<MinimumWorkAmount>2,22.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,32</Delay>
-		<Delay>1,0.09999999999999998,31</Delay>
-		<Delay>1,0.19999999999999996,28</Delay>
-		<Delay>1,0.09999999999999998,20</Delay>
-		<Delay>1,0.09999999999999998,10</Delay>
-		<Delay>1,0.19999999999999998,9</Delay>
-		<Delay>1,0.1,2</Delay>
-		<Delay>2,0.6666666666666665,2</Delay>
-		<Rework>1,1.2,1.0,H</Rework>
-		<Rework>1,1.0,0.3,H</Rework>
-		<Rework>1,1.1,0.2,H</Rework>
-		<Rework>2,1.0,0.6666666666666666,H</Rework>
+		<MinimumWorkAmount>1,142.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,46</Delay>
+		<Delay>1,0.033333333333333326,45</Delay>
+		<Delay>1,0.033333333333333326,42</Delay>
+		<Delay>1,0.033333333333333326,40</Delay>
+		<Delay>1,0.033333333333333326,39</Delay>
+		<Delay>1,0.033333333333333326,36</Delay>
+		<Delay>1,0.033333333333333326,29</Delay>
+		<Delay>1,0.06666666666666665,27</Delay>
+		<Delay>1,0.033333333333333326,26</Delay>
+		<Delay>1,0.033333333333333326,24</Delay>
+		<Delay>1,0.06666666666666665,19</Delay>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.033333333333333326,15</Delay>
+		<Delay>1,0.033333333333333326,14</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,12</Delay>
+		<Delay>1,0.033333333333333326,11</Delay>
+		<Delay>1,0.06666666666666665,10</Delay>
+		<Delay>1,0.06666666666666665,8</Delay>
+		<Delay>1,0.06666666666666665,7</Delay>
+		<Delay>1,0.06666666666666665,6</Delay>
+		<Delay>1,0.033333333333333326,5</Delay>
+		<Delay>1,0.03333333333333333,4</Delay>
+		<Rework>1,1.0,0.13333333333333333,E</Rework>
+		<Rework>1,1.1,0.4,H</Rework>
+		<Rework>1,1.2,0.14285714285714285,E</Rework>
+		<Rework>1,1.2,0.5714285714285714,H</Rework>
+		<Rework>1,1.3,0.5,E</Rework>
+		<Rework>1,1.0,0.06666666666666667,H</Rework>
+		<Rework>1,1.1,0.06666666666666667,E</Rework>
+		<Rework>2,-1.0,1.0,E</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>M</Name>
-		<MinimumWorkAmount>1,304.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,51</Delay>
-		<Delay>1,0.09999999999999998,41</Delay>
-		<Delay>1,0.09999999999999998,30</Delay>
-		<Delay>1,0.09999999999999998,28</Delay>
-		<Delay>1,0.09999999999999998,23</Delay>
-		<Delay>1,0.09999999999999998,18</Delay>
-		<Delay>1,0.09999999999999998,14</Delay>
-		<Delay>1,0.1,12</Delay>
-		<Delay>1,0.1,7</Delay>
-		<Rework>1,1.0,0.1,E</Rework>
+		<MinimumWorkAmount>1,305.0</MinimumWorkAmount>
+		<MinimumWorkAmount>2,83.0</MinimumWorkAmount>
+		<Delay>1,0.033333333333333326,52</Delay>
+		<Delay>1,0.033333333333333326,42</Delay>
+		<Delay>1,0.033333333333333326,40</Delay>
+		<Delay>1,0.09999999999999998,39</Delay>
+		<Delay>1,0.033333333333333326,37</Delay>
+		<Delay>1,0.033333333333333326,34</Delay>
+		<Delay>1,0.033333333333333326,31</Delay>
+		<Delay>1,0.033333333333333326,29</Delay>
+		<Delay>1,0.06666666666666665,28</Delay>
+		<Delay>1,0.033333333333333326,25</Delay>
+		<Delay>1,0.033333333333333326,24</Delay>
+		<Delay>1,0.06666666666666665,23</Delay>
+		<Delay>1,0.09999999999999998,21</Delay>
+		<Delay>1,0.033333333333333326,20</Delay>
+		<Delay>1,0.033333333333333326,19</Delay>
+		<Delay>1,0.033333333333333326,18</Delay>
+		<Delay>1,0.033333333333333326,17</Delay>
+		<Delay>1,0.033333333333333326,15</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
+		<Delay>1,0.033333333333333326,12</Delay>
+		<Delay>1,0.06666666666666665,9</Delay>
+		<Delay>1,0.03333333333333333,3</Delay>
+		<Rework>1,1.0,0.16666666666666666,E</Rework>
 	</TaskNode>
 	<TaskNode>
 		<Name>N</Name>
 		<MinimumWorkAmount>1,48.0</MinimumWorkAmount>
-		<Delay>1,0.09999999999999998,15</Delay>
+		<Delay>1,0.033333333333333326,13</Delay>
 		<Delay>1,0.09999999999999998,10</Delay>
-		<Delay>1,0.09999999999999998,9</Delay>
-		<Delay>1,0.19999999999999996,8</Delay>
-		<Delay>1,0.09999999999999998,6</Delay>
-		<Delay>1,0.09999999999999998,5</Delay>
-		<Delay>1,0.2,4</Delay>
+		<Delay>1,0.06666666666666665,9</Delay>
+		<Delay>1,0.09999999999999998,8</Delay>
+		<Delay>1,0.033333333333333326,7</Delay>
+		<Delay>1,0.19999999999999996,5</Delay>
+		<Delay>1,0.09999999999999998,4</Delay>
+		<Delay>1,0.19999999999999996,3</Delay>
+		<Delay>1,0.09999999999999998,2</Delay>
+		<Delay>1,0.03333333333333333,1</Delay>
 	</TaskNode>
 </NodeElementList>

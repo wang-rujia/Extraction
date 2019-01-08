@@ -120,7 +120,7 @@ public class Extract {
 		for(Task t: this.taskList){
 			System.out.println(t.getName());
 			for(int i : t.getMinimumWorkAmountMap().keySet()){
-				System.out.println("   "+i+"  "+t.getMinimumWorkAmount(i));
+				if(t.getMinimumWorkAmount(i)>0) System.out.println("   "+i+"  "+t.getMinimumWorkAmount(i));
 			}
 		}
 		System.out.println("Delay");
@@ -236,17 +236,22 @@ public class Extract {
 	private void calMWAInEachOccurrence(int i){
 		boolean[] ifInit = new boolean[taskList.size()];//ifInit[] <---> taskList
 		Arrays.fill(ifInit, false);
-		double wa=0.0;
 		for(Data d: this.dataList){
 			Task t = this.getTaskByName(d.getTaskName());
-			wa = d.getWorkAmount(); 
+			double wa = d.getWorkAmount(); 
 			if(d.getOccurrenceNumberInProject()==i && !ifInit[taskList.indexOf(t)] && d.getReworkFromInLog().equals("None") && wa>0){
 				t.addMinimumWorkAmount(i,wa);
 				ifInit[taskList.indexOf(t)]=true;
-			}else if(d.getOccurrenceNumberInProject()==i && d.getReworkFromInLog().equals("None")){
-				if(t.getMinimumWorkAmount(i) > wa && wa>0) t.addMinimumWorkAmount(i,wa);	
+			}else if(d.getOccurrenceNumberInProject()==i && ifInit[taskList.indexOf(t)] && d.getReworkFromInLog().equals("None") && wa>0){
+				if(t.getMinimumWorkAmount(i) > wa){
+					t.addMinimumWorkAmount(i,wa);
+				}
 			}
 		}
+		for(Task t: this.taskList){
+			if(!ifInit[taskList.indexOf(t)]) t.addMinimumWorkAmount(i,0.0);
+		}
+		
 	}
 	
 	public void saveAsFile(String filePath){
@@ -262,7 +267,8 @@ public class Extract {
 				pw.println("		<Name>"+t.getName()+"</Name>");
 				
 				for(int i : t.getMinimumWorkAmountMap().keySet()){
-					pw.println("		<MinimumWorkAmount>"+i+","+t.getMinimumWorkAmount(i)+"</MinimumWorkAmount>");
+					if(t.getMinimumWorkAmount(i)>0)
+						pw.println("		<MinimumWorkAmount>"+i+","+t.getMinimumWorkAmount(i)+"</MinimumWorkAmount>");
 				}
 				
 				Delay d = t.getDelay();
