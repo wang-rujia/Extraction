@@ -3,7 +3,7 @@ package extraction;
 public class Run {
 	public static void main(String[] args) {
 
-		String fileName1 = "case2_input.xml";
+		String fileName1 = "input.xml";
 		String fileName2 = "log.txt";
 
 		final ReadInput readInput = new ReadInput();
