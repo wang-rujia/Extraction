@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<NodeElementList>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>A</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>B</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>C</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>D</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>E</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>F</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>G</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>H</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>I</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>J</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>K</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>L</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>M</Name>
+    </TaskNode>
+    <TaskNode>
+        <Project>1</Project>
+        <Name>N</Name>
+    </TaskNode>
+    
+    <Dependency>
+        <TaskDependency subject="B" type="FS" name="A"></TaskDependency>
+        <TaskDependency subject="C" type="FS" name="A"></TaskDependency>
+        <TaskDependency subject="D" type="FS" name="B"></TaskDependency>
+        <TaskDependency subject="D" type="FS" name="C"></TaskDependency>
+        <TaskDependency subject="I" type="FS" name="D"></TaskDependency>
+        <TaskDependency subject="J" type="FS" name="I"></TaskDependency>
+        <TaskDependency subject="K" type="FS" name="J"></TaskDependency>
+        <TaskDependency subject="E" type="FS" name="D"></TaskDependency>
+        <TaskDependency subject="F" type="FS" name="E"></TaskDependency>
+        <TaskDependency subject="G" type="FS" name="F"></TaskDependency>
+        <TaskDependency subject="H" type="FS" name="G"></TaskDependency>
+        <TaskDependency subject="L" type="FS" name="H"></TaskDependency>
+        <TaskDependency subject="M" type="FS" name="L"></TaskDependency>
+        <TaskDependency subject="N" type="FS" name="M"></TaskDependency>
+    </Dependency>
+</NodeElementList>

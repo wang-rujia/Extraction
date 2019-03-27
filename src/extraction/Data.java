@@ -75,7 +75,7 @@ public class Data {
 	}
 	
 	public double getWorkAmount(){
-		double d = (this.et-this.st) * this.resourceCapacity * 0.01;
+		double d = (this.et-this.st) * this.resourceCapacity;
 		return d;
 	}
 	
